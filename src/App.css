@@ -2107,3 +2107,155 @@ a {
   opacity: 1;
   transform: translateY(-50%) scale(1.08);
 }
+/* ==========================================
+   TASK FILTER
+========================================== */
+
+.task-filter {
+  margin-top: 32px;
+  padding: 24px;
+  border: 1px solid rgba(120, 140, 180, 0.16);
+  border-radius: 18px;
+  background: rgba(18, 27, 43, 0.72);
+  backdrop-filter: blur(14px);
+}
+
+.filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.filter-header h3 {
+  margin: 0 0 5px;
+  font-size: 17px;
+  color: #f5f7ff;
+}
+
+.filter-header p {
+  margin: 0;
+  font-size: 13px;
+  color: #71809b;
+}
+
+.filter-controls {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 14px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8ea0bd;
+}
+
+.filter-group input,
+.filter-group select {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 14px;
+
+  border: 1px solid rgba(120, 140, 180, 0.18);
+  border-radius: 10px;
+
+  background: #080f1d;
+  color: #eef2ff;
+
+  font-size: 14px;
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.filter-group input::placeholder {
+  color: #53627c;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  border-color: #5878ff;
+  box-shadow: 0 0 0 3px rgba(88, 120, 255, 0.1);
+}
+
+.filter-group select {
+  cursor: pointer;
+}
+
+.clear-filter-btn {
+  padding: 9px 14px;
+
+  border: 1px solid rgba(120, 140, 180, 0.2);
+  border-radius: 9px;
+
+  background: transparent;
+  color: #9aa9c2;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.clear-filter-btn:hover {
+  background: rgba(88, 120, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(88, 120, 255, 0.4);
+}
+
+.filter-results {
+  margin: 18px 0 16px;
+  color: #71809b;
+  font-size: 13px;
+}
+
+.filter-results strong {
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .filter-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .search-group {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .filter-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .filter-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .search-group {
+    grid-column: span 1;
+  }
+
+  .clear-filter-btn {
+    width: 100%;
+  }
+}
