@@ -4,8 +4,10 @@ function Navbar() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("isLoggedIn");
-    navigate("/login");
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("username");
+
+    window.location.href = "/login";
   };
 
   return (

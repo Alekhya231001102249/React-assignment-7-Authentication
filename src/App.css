@@ -1970,3 +1970,140 @@ a {
     grid-template-columns: 1fr;
   }
 }
+/* ==========================================
+   PASSWORD STRENGTH
+========================================== */
+
+.password-strength {
+  margin-top: -5px;
+  margin-bottom: 16px;
+}
+
+.strength-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 7px;
+
+  font-size: 10px;
+}
+
+.strength-header span {
+  color: #59687c;
+}
+
+.strength-header strong {
+  font-size: 10px;
+}
+
+.strength-weak {
+  color: #f87171;
+}
+
+.strength-medium {
+  color: #facc15;
+}
+
+.strength-strong {
+  color: #4ade80;
+}
+
+.strength-bar {
+  width: 100%;
+  height: 4px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.strength-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  transition:
+    width 0.3s ease;
+}
+
+.strength-fill.strength-weak {
+  width: 33%;
+  background: #f87171;
+}
+
+.strength-fill.strength-medium {
+  width: 66%;
+  background: #facc15;
+}
+
+.strength-fill.strength-strong {
+  width: 100%;
+  background: #4ade80;
+}
+.password-requirements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px 12px;
+
+  margin-top: -8px;
+  margin-bottom: 16px;
+
+  font-size: 10px;
+}
+
+.password-requirements p {
+  margin: 0;
+  color: #59687c;
+}
+
+.password-requirements p:first-letter {
+  color: #4ade80;
+}
+/* ==========================================
+   PASSWORD SHOW / HIDE
+========================================== */
+
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-input-wrapper input {
+  width: 100%;
+  padding-right: 48px;
+}
+
+.show-password-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  font-size: 16px;
+
+  opacity: 0.65;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.show-password-btn:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.08);
+}

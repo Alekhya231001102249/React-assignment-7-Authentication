@@ -14,6 +14,9 @@ import CompletedTasks from "./pages/CompletedTasks";
 import Login from "./pages/Login";
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    !!localStorage.getItem("authToken")
+  );
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -59,7 +62,11 @@ function App() {
         {/* Public Route */}
         <Route
           path="/login"
-          element={<Login />}
+          element={
+            <Login
+              setIsAuthenticated={setIsAuthenticated}
+            />
+          }
         />
 
         {/* Protected Dashboard */}
